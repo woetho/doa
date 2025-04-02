@@ -1,0 +1,494 @@
+/*
+ * TeamSpeak Theme: Discord Inspired (Refined)
+ * Based on the user's original theme, modified for a Discord-like aesthetic.
+ * Uses Discord's color palette (dark greys, blurple accent) and a flatter design.
+ * Incorporates user feedback for refinement.
+ */
+
+:root,
+::after,
+::before {
+  /* --- Discord Color Palette --- */
+  /* Accent Color (Blurple) */
+  --discord-blurple: #5865f2;
+  --discord-blurple-hover: #4752c4; /* Slightly darker for hover */
+  --discord-blurple-transparent: rgba(88, 101, 242, 0.3);
+  --discord-blurple-transparent-light: rgba(88, 101, 242, 0.1);
+
+  /* Background Colors (Dark Greys) */
+  --discord-dark-bg-primary: #36393f;   /* Main chat, content */
+  --discord-dark-bg-secondary: #2f3136; /* Server list, sidebars, widgets */
+  --discord-dark-bg-tertiary: #202225;  /* Tooltips, popups, embeds, inputs */
+  --discord-dark-bg-modifier-hover: rgba(79, 84, 92, 0.16); /* Subtle hover */
+  --discord-dark-bg-modifier-active: rgba(79, 84, 92, 0.24); /* Subtle active */
+  --discord-dark-bg-modifier-selected: rgba(79, 84, 92, 0.32); /* Subtle selected */
+
+  /* Text Colors */
+  --discord-text-primary: #dcddde;     /* Main text */
+  --discord-text-secondary: #b9bbbe;   /* Muted text, placeholders */
+  --discord-text-muted: #72767d;       /* Very muted text, timestamps */
+  --discord-text-link: #00aff4;        /* Link color */
+  --discord-header-primary: #ffffff;   /* Headers */
+  --discord-header-secondary: #b9bbbe; /* Sub-headers */
+
+  /* Interactive Colors (Buttons, etc.) */
+  --discord-interactive-normal: #b9bbbe;  /* Default interactive elements */
+  --discord-interactive-hover: #dcddde;   /* Hover state */
+  --discord-interactive-active: #ffffff;  /* Active state */
+  --discord-interactive-muted: #4f545c;   /* Disabled state, Toggle Off BG */
+
+  /* Other */
+  --discord-mention-bg: rgba(250, 166, 26, 0.05); /* Mention background (yellowish) */
+  --discord-mention-self-bg: var(--discord-blurple-transparent); /* Self-mention background */
+  --discord-scrollbar-thumb: var(--discord-dark-bg-tertiary);
+  --discord-scrollbar-track: var(--discord-dark-bg-secondary);
+  --discord-border-color: rgba(32, 34, 37, 0.8); /* Subtle borders */ /* Slightly darker/more opaque */
+
+  /* --- Mapping to TeamSpeak Variables --- */
+
+  /* General Accent / Tint */
+  --tsv-tint: var(--discord-blurple) !important;
+  --tsv-tint2: var(--discord-blurple) !important;
+  --default-tsv-tint: var(--discord-blurple) !important;
+  --tsv-highlight-color: var(--discord-blurple-transparent) !important;
+  --highlight-outline-color: var(--discord-blurple-transparent) !important;
+
+  /* Backgrounds */
+  --tsv-bg: var(--discord-dark-bg-primary) !important;                 /* Main Background */
+  --tsv-shaded-bg: var(--discord-dark-bg-secondary) !important;        /* Slightly different bg (e.g., sidebar parts) */
+  --tsv-contrast-bg: var(--discord-dark-bg-tertiary) !important;       /* Contrasting bg (popups, maybe headers) */
+  --tsv-contrast-strong-bg: var(--discord-dark-bg-tertiary) !important;
+  --ts-context-menu-background: var(--discord-dark-bg-tertiary) !important;
+  --tsv-chat-widget-bg: var(--discord-dark-bg-secondary) !important;
+  --tsv-deviant-bg: var(--discord-dark-bg-secondary) !important;
+  --card-background: var(--discord-dark-bg-secondary) !important;
+  --tsv-preview-bg: var(--discord-dark-bg-tertiary) !important;
+  --strong-bg: var(--discord-dark-bg-secondary) !important; /* Used in Dashboard */
+  --ts-tree-badges-bg: var(--discord-dark-bg-tertiary) !important;
+
+  /* Headers */
+  --ts-new-header-bg: var(--discord-dark-bg-tertiary) !important;
+  --tsv-header-bg: var(--discord-dark-bg-secondary) !important;
+  --tsv-view-header-bg: var(--discord-dark-bg-secondary) !important;
+  --tsv-view-header-gradient-start: var(--discord-dark-bg-secondary) !important;
+  --tsv-server-header-gradient-start: var(--discord-dark-bg-secondary) !important;
+  --tsv-server-header-gradient-end: var(--discord-dark-bg-secondary) !important;
+  --tsv-highlight-header-bg: linear-gradient(to right, var(--discord-blurple-transparent-light) 0, var(--discord-dark-bg-secondary) 100%) !important;
+  --tsv-unrelated-activity-header-bg: var(--discord-dark-bg-secondary) !important;
+
+  /* Server Tree / Sidebar */
+  --tsv-servertree-bg-gradient: var(--discord-dark-bg-primary) !important; /* Solid color */
+
+  /* Chat */
+  --tsv-chat-remote-bg: transparent !important; /* Make messages blend into chat BG */
+  --tsv-chat-self-bg: transparent !important; /* Make messages blend into chat BG */
+  --tsv-chat-deleted-bg: transparent !important; /* Make messages blend into chat BG */
+  --tsv-chat-deleted-font-color: #fa777c !important;
+  --tsv-chat-link-color: var(--discord-text-link) !important;
+  --tsv-chat-remote-font-color: var(--discord-text-primary) !important;
+  --tsv-chat-self-font-color: var(--discord-text-primary) !important;
+  --ts-chat-system-message-bg: transparent !important; /* System messages blend in */
+  --ts-chat-system-highlight-text-color: var(--discord-blurple) !important;
+  --ts-chat-system-message-color: var(--discord-text-muted) !important; /* Muted system text */
+
+  /* Buttons */
+  --tsv-button-bg: var(--discord-interactive-muted) !important;
+  --tsv-button-hover-bg: var(--discord-interactive-normal) !important;
+  --tsv-button-filled-bg: var(--discord-blurple) !important;
+  --tsv-button-filled-hover-bg: var(--discord-blurple-hover) !important; /* Added hover for filled */
+  --tsv-button-filled-disabled-bg: var(--discord-interactive-muted) !important;
+  --tsv-control-handle-active-bg: var(--discord-blurple) !important;
+  --hero-button-background: var(--discord-blurple) !important;
+
+  /* Text / Fonts */
+  --tsv-font-color: var(--discord-text-primary) !important;
+  --tsv-font-subtitle-color: var(--discord-text-secondary) !important;
+  --ts-third-font-color: var(--discord-header-primary) !important;
+  --custom-color-secondary-text: var(--discord-text-secondary) !important;
+
+  /* Borders / Separators */
+  --tsv-separation-border: 1px solid var(--discord-border-color) !important;
+  --ts-drag-border: var(--discord-blurple) !important;
+  --horizontal-separator-color: var(--discord-border-color) !important;
+  --presence-separator-presence: var(--discord-border-color) !important;
+  --tsv-context-menu-border: var(--discord-border-color) !important;
+  --card-outline: var(--discord-blurple) !important;
+
+  /* Menus / Selections */
+  --ts-menu-action-color: var(--discord-blurple) !important;
+  --tsv-context-menu-item-selection: var(--discord-dark-bg-modifier-selected) !important;
+  --ts-select-arrow-color: var(--discord-interactive-normal) !important;
+
+  /* Sliders */
+  --tsv-slider-track-bg: var(--discord-dark-bg-tertiary) !important;
+  --custom-color-slider1: var(--discord-blurple) !important; /* 'On' color */
+  --custom-color-slider2: var(--discord-interactive-muted) !important; /* 'Off' color */
+
+  /* Scrollbar */
+  --tsv-scrollbar-bg: var(--discord-scrollbar-thumb) !important;
+  --tsv-scrollbar-chunks--bg-1: var(--discord-scrollbar-track) !important;
+  --tsv-scrollbar-chunks--bg-2: transparent !important;
+  --custom-value-scrollbar-width: 6px;
+
+  /* Client States (Talking, Silent) - Use border or subtle indicator */
+  /* Removing gradients for flatter look */
+  --tsv-client-silent--gradient-start: transparent !important;
+  --tsv-client-silent--gradient-stop: transparent !important;
+  --tsv-client-talking--gradient-start: var(--discord-blurple) !important; /* Maybe just use border? */
+  --tsv-client-talking--gradient-stop: var(--discord-blurple) !important;
+}
+
+/* --- Specific Element Styling Adjustments --- */
+
+
+/* Remove Borders where Discord usually doesn't have them */
+.ts-server-header .tsv-view-banner.tsv-active .tsv-view-background::after,
+.ts-account-settings-view .tsv-view-banner.tsv-active .tsv-view-background::after {
+  border: none !important;
+}
+
+/* * * * START: REFINED STYLES BASED ON FEEDBACK * * * */
+
+/* Chat Window Background */
+.ts-chat-view-scroll-area, /* Common pattern for scrollable content */
+.ts-chat-room-view > .tsv-body-background, /* Check if body-background is direct child */
+.ts-chat-view /* General container as fallback */
+{
+    background-color: var(--tsv-bg) !important; /* --discord-dark-bg-primary */
+}
+
+/* Search Bar */
+.tsv-search-bar {
+    background-color: var(--discord-dark-bg-secondary) !important;
+    border-radius: var(--tsv-border-radius) !important;
+    border: 1px solid var(--discord-border-color) !important; /* Subtle border */
+    padding: 4px 8px !important; /* Consistent padding */
+}
+.tsv-search-bar input {
+     background-color: transparent !important;
+     color: var(--discord-text-primary) !important;
+     border: none !important;
+}
+.tsv-search-bar:focus-within {
+    border-color: var(--discord-blurple) !important;
+}
+
+/* Activity List */
+.tsv-activity-group-list {
+    background-color: var(--discord-dark-bg-tertiary) !important;
+    padding: 8px !important;
+    /* border: 1px solid var(--discord-border-color) !important; /* Optional: Add border */
+}
+
+/* Chat Input Container (Fix Corner Glitches) */
+.ts-chat-input-container {
+  border: 1px solid var(--discord-dark-bg-tertiary) !important;
+  background-color: var(--discord-dark-bg-tertiary) !important;
+  transition: border-color 0.2s ease-in-out !important;
+  overflow: hidden !important; /* ADDED: Clip child content */
+}
+.ts-chat-input-container.focus,
+.ts-chat-input-container:hover {
+  border-color: var(--discord-blurple) !important;
+  background-color: var(--discord-dark-bg-tertiary) !important;
+}
+/* Ensure inner content doesn't interfere */
+.ts-chat-input-container-content {
+    padding: 4px 8px !important; /* Example padding */
+}
+
+/* System Message Body Border */
+.ts-chat-message-system-body {
+    border-left: 2px solid var(--discord-border-color) !important;
+    margin: 2px 0; /* Add some vertical space */
+}
+.ts-chat-room-event-selected .ts-chat-message-system-body:before { /* Keep selection indicator */
+  background: var(--discord-blurple) !important;
+  box-shadow: 0 0 0 1px var(--discord-blurple) !important;
+  /* Adjust position/size if needed due to new border/padding */
+}
+
+/* General Input Wrapper Border */
+.ts-input-wrapper {
+    background-color: var(--discord-dark-bg-tertiary) !important;
+    border: 1px solid var(--discord-border-color) !important;
+    border-radius: 3px !important;
+    padding: 6px 8px !important; /* Slightly more padding */
+    display: flex; /* Helps align input inside */
+    align-items: center;
+}
+.ts-input-wrapper input,
+.ts-input-wrapper textarea {
+    background: transparent !important;
+    border: none !important;
+    color: var(--discord-text-primary) !important;
+    width: 100% !important;
+    margin: 0 !important;
+    outline: none !important;
+}
+.ts-input-wrapper:focus-within {
+     border-color: var(--discord-blurple) !important;
+     box-shadow: 0 0 0 1px var(--discord-blurple-transparent) !important; /* Optional focus ring */
+}
+
+/* Widget Container Elements Background */
+/* Target direct children or specific known widget classes */
+.tsv-readability.ts-widget-container > *,
+.tsv-dashboard-servers__content, /* Apply card style to dashboard sections too */
+.tsv-dashboard-chats,
+.tsv-dashboard-news
+{
+     margin-bottom: 10px !important;
+     
+}
+/* Make sure discovery wrapper uses primary bg if it's the main view */
+.ts-discovery-wrapper {
+    background: var(--discord-dark-bg-primary) !important;
+    border: none !important; /* Remove card style from main wrapper */
+    padding: 0 !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+}
+
+
+/* Chat Bubbles & Messages - Aim for flatter look */
+.ts-chat-room-event-detailed:not(.ts-currently-referencing, .apparently-people-like-huge-faces) .ts-chat-room-event-bubble {
+  background: transparent !important; /* Bubble BG same as chat pane */
+  box-shadow: none !important;
+  padding: 1px 8px 1px 0 !important; /* Minimal padding, esp. left */
+  margin-bottom: 1px !important;
+}
+/* Hide the chat bubble tail */
+.ts-chat-room-event-detailed:not(.ts-currently-referencing, .apparently-people-like-huge-faces) .ts-chat-room-event-bubble::before {
+  display: none !important;
+}
+
+/* Self Mentions */
+.ts-chat-room-event-bubble.self-mention {
+  background: var(--discord-mention-self-bg) !important;
+  color: var(--discord-text-primary) !important;
+  border-left: 2px solid var(--discord-blurple) !important;
+  border-radius: 0 3px 3px 0 !important;
+  padding-left: 6px !important; /* Add padding for the border */
+}
+.ts-chat-room-event-bubble.self-mention::before {
+  display: none !important;
+}
+
+/* General Mentions (If a selector exists - this is a guess) */
+.ts-chat-room-event-bubble.mention {
+  background: var(--discord-mention-bg) !important;
+  color: var(--discord-text-primary) !important;
+  /* Optional: Add yellow border */
+  /* border-left: 2px solid #faa61a !important; */
+  /* border-radius: 0 3px 3px 0 !important; */
+  /* padding-left: 6px !important; */
+}
+
+/* Reply / Reference Highlight */
+.ts-currently-referencing .ts-chat-room-event-bubble {
+  background: var(--discord-dark-bg-modifier-selected) !important;
+  color: var(--discord-text-primary) !important;
+  border-left: 2px solid var(--discord-text-link) !important;
+  border-radius: 0 3px 3px 0 !important;
+  padding-left: 6px !important;
+}
+.ts-currently-referencing .ts-chat-room-event-bubble::before {
+  display: none !important;
+}
+.ts-currently-referencing .ts-chat-message-attachment-footer.ts-noselect > a,
+.ts-currently-referencing .ts-reply .ts-reply-icon {
+  color: var(--discord-text-link) !important;
+}
+
+/* Attachments */
+.ts-chat-message-attachment-inner {
+  background-color: var(--discord-dark-bg-secondary) !important;
+  border: 1px solid var(--discord-border-color) !important;
+}
+.ts-chat-message-attachment .ts-chat-message-attachment-image {
+  height: unset !important;
+}
+.ts-chat-message-attachment-myts-file.isImage {
+  height: unset !important;
+}
+/* Selected Attachment */
+.ts-chat-room-event-selected .ts-chat-message-attachment-container .ts-chat-message-attachment-inner {
+  background: var(--discord-dark-bg-modifier-selected) !important;
+  border-color: var(--discord-blurple) !important;
+  --room-event-highlight-border: var(--discord-blurple) !important;
+  --room-event-highlight-border2: var(--discord-blurple) !important;
+  --room-event-highlight-bg: var(--discord-dark-bg-modifier-selected) !important;
+  --tsv-shaded-bg-selection: var(--discord-dark-bg-modifier-selected) !important;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: var(--custom-value-scrollbar-width) !important;
+  height: 6px !important;
+}
+::-webkit-scrollbar-track {
+  background: var(--discord-scrollbar-thumb) !important;
+  border-radius: 3px !important;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--discord-scrollbar-track) !important;
+  border-radius: 3px !important;
+}
+.ts-chunk-scroll-track__thumb {
+    background-color: var(--discord-scrollbar-track) !important;
+    border-radius: 3px !important;
+}
+
+/* Slider - Remove gradient, use solid colors */
+.ts-slider-segment-value.ts-slider-segment-value-on {
+  background: var(--custom-color-slider1) !important; /* Blurple */
+}
+.ts-slider-segment-value.ts-slider-segment-value-off {
+  background: var(--custom-color-slider2) !important; /* Muted Grey */
+}
+
+/* Server Tree / Sidebar - Flat Look */
+.tsv-sidebar .tsv-body-background {
+  background: var(--discord-dark-bg-tertiary) !important; /* Solid color */
+}
+/* Channel Background - Simpler */
+.ts-server-tree-item-background-no-image {
+  background: transparent !important; /* Let the tree background show */
+}
+
+/* Server Tree Footer Line */
+.tsv-footer::before {
+  border-top: 2px solid var(--discord-border-color) !important;
+}
+
+/* Remove Hero Button Animation */
+.tsv-button-hero {
+  animation: none !important;
+  box-shadow: none !important;
+}
+
+/* Drag and Drop Indicator */
+.ts-dnd-drag-into:after {
+  background-color: var(--discord-blurple-transparent) !important;
+  border: 1px dashed var(--discord-blurple) !important;
+}
+
+/* Multiselect Checkboxes (Approximation) */
+.ts-chat-room-event-compact.ts-chat-room-event-selected .ts-chat-message-compact-container .actual:before,
+.ts-chat-room-event-selected:before
+{
+  box-shadow: none !important;
+  background: var(--discord-blurple) !important;
+  border: 1px solid var(--discord-text-primary);
+  border-radius: 3px;
+  /* Adjust size/position if needed via TeamSpeak Dev Tools */
+}
+
+
+/* Strong Text */
+strong {
+  font-weight: 600 !important;
+  color: var(--discord-header-secondary) !important; /* Slightly less bright than pure white */
+}
+
+/* Spoilers */
+.ts-parsed-text-content .spoiler:not([visible]) {
+  background-color: var(--discord-dark-bg-tertiary) !important;
+  color: transparent !important;
+  border-radius: 3px;
+}
+.ts-parsed-text-content .spoiler:not([visible]):hover {
+  background-color: rgba(32, 34, 37, 0.8) !important;
+}
+
+/* Keep original fixes if still needed */
+.tsv-activity-group-list > li li:not(:first-child) {
+  padding-left: calc(var(--tsv-padding-h) + 10px) !important;
+}
+
+/* SERVER EVENTS */
+.ts-server-events-list li.ts-event-cyan,
+.ts-server-logs-list li.ts-event-cyan {
+  border-left-color: var(--default-tsv-tint) !important; /* Uses blurple now */
+}
+
+/* Channel Background Original - commented out, using transparent now */
+/* .ts-server-tree-item-background-no-image {
+  background: linear-gradient(to right, #17191c 50%, #1e1e1e 100%) !important;
+} */
+
+/* --- Ad Removal --- */
+.ts-join-community .tsv-button-filled, /* Hide "Join Community" button */
+.ts-start-community-banner,          /* Hide "Start Community" banner */
+.ts-start-community-banner + .ts-horizontal-separator { /* Hide separator after banner */
+  display: none !important;
+}
+
+.tsv-sidebar .tsv-footer:not(.transparent) {
+background: var(--discord-dark-bg-tertiary) !important;
+border-top: 2px solid var(--discord-dark-bg-primary) !important;
+}
+
+.tsv-settings-categories.not-in-sidebar .tsv-activity-group-list {
+  background: var(--discord-dark-bg-primary) !important;
+}
+
+.ts-server-tree-item-leaf.client.self {
+    color: var(--discord-blurple);
+    font-weight: 500;
+}
+
+.ts-server-tree-item-groups span {
+    background: var(--discord-dark-bg-secondary) !important;
+}
+
+.ts-server-tree-inactive-status{
+    background: var(--discord-dark-bg-secondary) !important;
+}
+
+.ts-server-tree-active-status{
+    background: var(--discord-dark-bg-secondary) !important;
+}
+
+.ts-title-logo {
+    --tsv-icon-tint: var(--discord-blurple) !important;
+}
+
+.ts-toggle.checked {
+    border: 1px solid var(--discord-blurple) !important;
+}
+
+.ts-toggle-inner.checked:after {
+    background: var(--discord-blurple) !important;
+}
+
+.tsv-button-filled, .tsv-button-gray {
+    border-radius: var(--tsv-border-radius) !important;
+}
+
+.tsv-tool-button.filled {
+    border-radius: var(--tsv-border-radius);
+}
+
+.ts-checkbox .ts-checkbox-inner .ts-checkbox-checkmark {
+   --tsv-icon-base: var(--discord-blurple) !important;
+}
+
+.tsv-readability ts-widget-container {
+    background: var(--discord-dark-bg-secondary) !important;
+}
+
+
+.tsv-readability.ts-widget-container {
+
+  /* Target the specific descendant elements within the parent */
+  .ts-card.ts-widget.ts-widget-break.full.no-padding.tsv-client-banner,
+  .ts-card.ts-widget.ts-widget-break.full.tsv-client-info-groups-container.ts-client-info-status,
+  .ts-card.ts-widget.ts-widget-break.full.tsv-client-info-contact-management,
+  .ts-card.ts-widget.ts-widget-break.full.tsv-client-info-groups-container,
+  .ts-card.ts-widget.ts-transfer-quota-outer.ts-widget-break {
+    background: var(--discord-dark-bg-primary) !important;
+  }
+
+}
