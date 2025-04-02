@@ -1,0 +1,32 @@
+{
+  "name": "DOA Theme",
+  "description": "DOA TeamSpeak by ImScheinox",
+  "version": "1.0.0",
+  "identifier": "de.imscheinox.doa",
+  "engines": {
+    "teamspeak": 1
+  },
+    "repository": {
+        "url": "https://github.com/IMScheinox/doa",
+        "directory": "doa",
+        "type": "git"
+    },
+    "image": "DOA.png",
+    "license": "MIT",
+    "author": {
+        "name": "ImScheinox",
+        "email": "paulthies2@gmail.net",
+        "url": "https://dawn-alliance.de",
+        "userTag": "ImScheinox@myteamspeak.com"
+    },
+  "content": {
+    "themes": [
+      {
+        "name": "DOA",
+        "source": "DOA.css",
+        "image": "DOA.png",
+	"apiVersion": 1
+      }
+    ]
+  }
+}
