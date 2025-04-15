@@ -1,0 +1,658 @@
+/*
+ * DOA - (Highly customizable TeamSpeak Theme)
+ * Author: ImScheinox
+ * Version: 1.0 
+ * Description: A dark appearance for TeamSpeak 5/6.
+ */
+
+:root,
+::after,
+::before {
+  /* Define your Colors */
+
+  /* System Colors */
+  --teamspeak-blue: #5865f2;
+  --teamspeak-blue-hover: #4752c4;
+  --teamspeak-blue-transparent: rgba(88, 101, 242, 0.3);
+  --teamspeak-blue-transparent-light: rgba(88, 101, 242, 0.1);
+
+  /* Background Colors */
+  --teamspeak-dark-bg-primary: #36393f;   /* Main chat, content */
+  --teamspeak-dark-bg-secondary: #2f3136; /* Server list, sidebars, widgets */
+  --teamspeak-dark-bg-tertiary: #202225;  /* Tooltips, popups, embeds, inputs */
+  --teamspeak-dark-bg-modifier-hover: rgba(79, 84, 92, 0.16); /* Subtle hover */
+  --teamspeak-dark-bg-modifier-active: rgba(79, 84, 92, 0.24); /* Subtle active */
+  --teamspeak-dark-bg-modifier-selected: rgba(79, 84, 92, 0.32); /* Subtle selected */
+
+  /* Text Colors */
+  --teamspeak-text-primary: #dcddde;     /* Main text */
+  --teamspeak-text-secondary: #b9bbbe;   /* Muted text, placeholders */
+  --teamspeak-text-muted: #72767d;       /* Very muted text, timestamps */
+  --teamspeak-text-link: #00aff4;        /* Link color */
+  --teamspeak-header-primary: #ffffff;   /* Headers */
+  --teamspeak-header-secondary: #b9bbbe; /* Sub-headers */
+
+  /* Interactive Colors (Buttons, etc.) */
+  --teamspeak-interactive-normal: #b9bbbe;  /* Default interactive elements */
+  --teamspeak-interactive-hover: #dcddde;   /* Hover state */
+  --teamspeak-interactive-active: #ffffff;  /* Active state */
+  --teamspeak-interactive-muted: #4f545c;   /* Disabled state, Toggle Off BG */
+
+  /* Other */
+  --teamspeak-mention-bg: rgba(250, 166, 26, 0.05); /* Mention background (yellowish) */
+  --teamspeak-mention-self-bg: var(--teamspeak-blue-transparent); /* Self-mention background */
+  --teamspeak-scrollbar-thumb: var(--teamspeak-dark-bg-tertiary);
+  --teamspeak-scrollbar-track: var(--teamspeak-text-secondary);
+  --teamspeak-border-color: rgba(32, 34, 37, 0.8); /* Subtle borders */ /* Slightly darker/more opaque */
+
+  /* --- Mapping to TeamSpeak Variables --- */
+
+  /* General Accent / Tint */
+  --tsv-tint: var(--teamspeak-blue) !important;
+  --tsv-tint2: var(--teamspeak-blue) !important;
+  --default-tsv-tint: var(--teamspeak-blue) !important;
+  --tsv-highlight-color: var(--teamspeak-blue-transparent) !important;
+  --highlight-outline-color: var(--teamspeak-blue-transparent) !important;
+
+  /* Backgrounds */
+  --tsv-bg: var(--teamspeak-dark-bg-primary) !important;                 /* Main Background */
+  --tsv-shaded-bg: var(--teamspeak-dark-bg-secondary) !important;        /* Slightly different bg (e.g., sidebar parts) */
+  --tsv-contrast-bg: var(--teamspeak-dark-bg-tertiary) !important;       /* Contrasting bg (popups, maybe headers) */
+  --tsv-contrast-strong-bg: var(--teamspeak-dark-bg-tertiary) !important;
+  --ts-context-menu-background: var(--teamspeak-dark-bg-tertiary) !important;
+  --tsv-chat-widget-bg: var(--teamspeak-dark-bg-secondary) !important;
+  --tsv-deviant-bg: var(--teamspeak-dark-bg-secondary) !important;
+  --card-background: var(--teamspeak-dark-bg-secondary) !important;
+  --tsv-preview-bg: var(--teamspeak-dark-bg-tertiary) !important;
+  --strong-bg: var(--teamspeak-dark-bg-secondary) !important; /* Used in Dashboard */
+  --ts-tree-badges-bg: var(--teamspeak-dark-bg-tertiary) !important;
+
+  /* Headers */
+  --ts-new-header-bg: var(--teamspeak-dark-bg-tertiary) !important;
+  --tsv-header-bg: var(--teamspeak-dark-bg-secondary) !important;
+  --tsv-view-header-bg: var(--teamspeak-dark-bg-secondary) !important;
+  --tsv-view-header-gradient-start: var(--teamspeak-dark-bg-secondary) !important;
+  --tsv-server-header-gradient-start: var(--teamspeak-dark-bg-secondary) !important;
+  --tsv-server-header-gradient-end: var(--teamspeak-dark-bg-secondary) !important;
+  --tsv-highlight-header-bg: linear-gradient(to right, var(--teamspeak-blue-transparent-light) 0, var(--teamspeak-dark-bg-secondary) 100%) !important;
+  --tsv-unrelated-activity-header-bg: var(--teamspeak-dark-bg-secondary) !important;
+
+  /* Server Tree / Sidebar */
+  --tsv-servertree-bg-gradient: var(--teamspeak-dark-bg-primary) !important; /* Solid color */
+
+  /* Chat */
+  --tsv-chat-remote-bg: transparent !important; /* Make messages blend into chat BG */
+  --tsv-chat-self-bg: transparent !important; /* Make messages blend into chat BG */
+  --tsv-chat-deleted-bg: transparent !important; /* Make messages blend into chat BG */
+  --tsv-chat-deleted-font-color: #fa777c !important;
+  --tsv-chat-link-color: var(--teamspeak-text-link) !important;
+  --tsv-chat-remote-font-color: var(--teamspeak-text-primary) !important;
+  --tsv-chat-self-font-color: var(--teamspeak-text-primary) !important;
+  --ts-chat-system-message-bg: transparent !important; /* System messages blend in */
+  --ts-chat-system-highlight-text-color: var(--teamspeak-blue) !important;
+  --ts-chat-system-message-color: var(--teamspeak-text-muted) !important; /* Muted system text */
+
+  /* Buttons */
+  --tsv-button-bg: var(--teamspeak-interactive-muted) !important;
+  --tsv-button-hover-bg: var(--teamspeak-blue-hover) !important; 
+  --tsv-button-filled-bg: var(--teamspeak-blue) !important;
+  --tsv-button-filled-hover-bg: var(--teamspeak-blue-hover) !important; 
+  --tsv-button-filled-disabled-bg: var(--teamspeak-interactive-muted) !important;
+  --tsv-control-handle-active-bg: var(--teamspeak-blue) !important;
+  --hero-button-background: var(--teamspeak-blue) !important;
+
+  /* Text / Fonts */
+  --tsv-font-color: var(--teamspeak-text-primary) !important;
+  --tsv-font-subtitle-color: var(--teamspeak-text-secondary) !important;
+  --ts-third-font-color: var(--teamspeak-header-primary) !important;
+  --custom-color-secondary-text: var(--teamspeak-text-secondary) !important;
+
+  /* Borders / Separators */
+  --tsv-separation-border: 1px solid var(--teamspeak-border-color) !important;
+  --ts-drag-border: var(--teamspeak-blue) !important;
+  --horizontal-separator-color: var(--teamspeak-border-color) !important;
+  --presence-separator-presence: var(--teamspeak-border-color) !important;
+  --tsv-context-menu-border: var(--teamspeak-border-color) !important;
+  --card-outline: var(--teamspeak-blue) !important;
+
+  /* Menus / Selections */
+  --ts-menu-action-color: var(--teamspeak-blue) !important;
+  --tsv-context-menu-item-selection: var(--teamspeak-dark-bg-modifier-selected) !important;
+  --ts-select-arrow-color: var(--teamspeak-interactive-normal) !important;
+
+  /* Sliders */
+  --tsv-slider-track-bg: var(--teamspeak-dark-bg-tertiary) !important;
+  --custom-color-slider1: var(--teamspeak-blue) !important; /* 'On' color */
+  --custom-color-slider2: var(--teamspeak-interactive-muted) !important; /* 'Off' color */
+
+  /* Scrollbar */
+  --tsv-scrollbar-bg: var(--teamspeak-scrollbar-thumb) !important;
+  --tsv-scrollbar-chunks--bg-1: var(--teamspeak-scrollbar-track) !important;
+  --tsv-scrollbar-chunks--bg-2: transparent !important;
+  --custom-value-scrollbar-width: 6px;
+
+  /* Client States (Talking, Silent) - Use border or subtle indicator */
+  /* Removing gradients for flatter look */
+  --tsv-client-silent--gradient-start: transparent !important;
+  --tsv-client-silent--gradient-stop: transparent !important;
+  --tsv-client-talking--gradient-start: var(--teamspeak-blue) !important; 
+  --tsv-client-talking--gradient-stop: var(--teamspeak-blue) !important;
+}
+
+/* --- Specific Element Styling Adjustments --- */
+
+/* Search Bar */
+.tsv-search-bar {
+    background-color: var(--teamspeak-dark-bg-secondary) !important;
+    border-radius: var(--tsv-border-radius) !important;
+    border: 1px solid var(--teamspeak-border-color) !important; 
+    padding: 4px 8px !important; 
+}
+.tsv-search-bar input {
+     background-color: transparent !important;
+     color: var(--teamspeak-text-primary) !important;
+     border: none !important;
+}
+.tsv-search-bar:focus-within {
+    border-color: var(--teamspeak-blue) !important;
+}
+.tsv-search-bar.focus,
+.tsv-search-bar:hover {
+  border-color: var(--teamspeak-blue) !important;
+}
+
+.ts-input-wrapper.focus,
+.ts-input-wrapper:hover {
+  border-color: var(--teamspeak-blue) !important;
+}
+
+.tsv-sidebar li:hover 
+.tsv-icon .tsv-button svg path {
+  fill: var(--teamspeak-blue) !important;
+  transform: scale(1.15);
+  transform-origin: 50% 50%;
+  transition: all .1s ease-out;
+}
+
+.tsv-sidebar li:hover .tsv-icon-server-global .tsv-icon-base-fill {
+  fill: var(--teamspeak-blue) !important;
+  transform: scale(1.15);
+  transform-origin: 50% 50%;
+  transition: all .1s ease-out;
+}
+
+
+.tsv-segmented-button svg path {
+  transform-origin: 50% 50%;
+  transition: transform 0.1s ease-out;
+}
+
+.tsv-segmented-button:hover svg path {
+  transform: scale(1.15);
+}
+
+.tsv-button.tsv-button-left-aligned.tsv-button-tinted.tsv-button-has-image:hover 
+.tsv-icon-stack svg path {
+  transform: scale(1.15);
+  transform-origin: 50% 50%;
+  transition: transform 0.1s ease-out;
+}
+
+
+
+/* Activity List */
+.tsv-activity-group-list {
+    background-color: var(--teamspeak-dark-bg-tertiary) !important;
+    padding: 8px !important;
+    /* border: 1px solid var(--teamspeak-border-color) !important; /* Optional: Add border */
+}
+
+/* Chat Input Container (Fix Corner Glitches) */
+.ts-chat-input-container {
+  border: 1px solid var(--teamspeak-dark-bg-tertiary) !important;
+  background-color: var(--teamspeak-dark-bg-tertiary) !important;
+  transition: border-color 0.2s ease-in-out !important;
+  margin-right: 18px !important;
+}
+.ts-chat-input-container.focus,
+.ts-chat-input-container:hover {
+  border-color: var(--teamspeak-blue) !important;
+  background-color: var(--teamspeak-dark-bg-tertiary) !important;
+}
+/* Ensure inner content doesn't interfere */
+.ts-chat-input-container-content {
+    padding: 4px 8px !important; 
+}
+
+/* System Message Body Border */
+.ts-chat-message-system-body {
+    border-left: 2px solid var(--teamspeak-border-color) !important;
+    margin: 2px 0; /* Add some vertical space */
+}
+.ts-chat-room-event-selected .ts-chat-message-system-body:before { /* Keep selection indicator */
+  background: var(--teamspeak-blue) !important;
+  box-shadow: 0 0 0 1px var(--teamspeak-blue) !important;
+  /* Adjust position/size if needed due to new border/padding */
+}
+
+/* General Input Wrapper Border */
+.ts-input-wrapper {
+    background-color: var(--teamspeak-dark-bg-tertiary) !important;
+    border: 1px solid var(--teamspeak-border-color) !important;
+    border-radius: 3px !important;
+    padding: 6px 8px !important; /* Slightly more padding */
+    display: flex; /* Helps align input inside */
+    align-items: center;
+}
+.ts-input-wrapper input,
+.ts-input-wrapper textarea {
+    background: transparent !important;
+    border: none !important;
+    color: var(--teamspeak-text-primary) !important;
+    width: 100% !important;
+    margin: 0 !important;
+    outline: none !important;
+}
+.ts-input-wrapper:focus-within {
+     border-color: var(--teamspeak-blue) !important;
+     box-shadow: 0 0 0 1px var(--teamspeak-blue-transparent) !important; /* Optional focus ring */
+}
+
+/* Widget Container Elements Background */
+/* Target direct children or specific known widget classes */
+.tsv-readability.ts-widget-container > *,
+.tsv-dashboard-servers__content, /* Apply card style to dashboard sections too */
+.tsv-dashboard-chats,
+.tsv-dashboard-news
+{
+     margin-bottom: 10px !important;
+     
+}
+/* Make sure discovery wrapper uses primary bg if it's the main view */
+.ts-discovery-wrapper {
+    background: var(--teamspeak-dark-bg-primary) !important;
+    border: none !important; /* Remove card style from main wrapper */
+    padding: 0 !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+}
+
+
+/* Chat Bubbles & Messages - Aim for flatter look */
+.ts-chat-room-event-detailed:not(.ts-currently-referencing, .apparently-people-like-huge-faces) .ts-chat-room-event-bubble {
+  padding: 0 12.5px 4px 4px !important;
+  box-shadow: none !important;
+  margin-bottom: 1px !important;
+}
+/* Hide the chat bubble tail */
+.ts-chat-room-event-detailed:not(.ts-currently-referencing, .apparently-people-like-huge-faces) .ts-chat-room-event-bubble::before {
+  display: none !important;
+}
+
+.ts-reactions {
+  margin-left: 50px !important; 
+}
+
+/* Self Mentions */
+.ts-chat-room-event-bubble.self-mention {
+  background: var(--teamspeak-mention-self-bg) !important;
+  color: var(--teamspeak-text-primary) !important;
+  border-left: 2px solid var(--teamspeak-blue) !important;
+  border-radius: 0 3px 3px 0 !important;
+  padding-left: 6px !important; /* Add padding for the border */
+}
+.ts-chat-room-event-bubble.self-mention::before {
+  display: none !important;
+}
+
+/* General Mentions (If a selector exists - this is a guess) */
+.ts-chat-room-event-bubble.mention {
+  background: var(--teamspeak-mention-bg) !important;
+  color: var(--teamspeak-text-primary) !important;
+}
+
+/* Reply / Reference Highlight */
+.ts-currently-referencing .ts-chat-room-event-bubble {
+  background: var(--teamspeak-dark-bg-modifier-selected) !important;
+  color: var(--teamspeak-text-primary) !important;
+  border-left: 2px solid var(--teamspeak-text-link) !important;
+  border-radius: 0 3px 3px 0 !important;
+  padding-left: 6px !important;
+}
+
+.ts-rendered-message .ts-reply .ts-reply-icon {
+    --tsv-icon-base: var(--teamspeak-text-primary) !important;
+}
+
+.ts-currently-referencing .ts-chat-room-event-bubble::before {
+  display: none !important;
+}
+.ts-currently-referencing .ts-chat-message-attachment-footer.ts-noselect > a,
+.ts-currently-referencing .ts-reply .ts-reply-icon {
+  color: var(--teamspeak-text-link) !important;
+}
+
+/* Attachments */
+.ts-chat-message-attachment-inner {
+  background-color: var(--teamspeak-dark-bg-secondary) !important;
+  border: 1px solid var(--teamspeak-border-color) !important;
+}
+.ts-chat-message-attachment .ts-chat-message-attachment-image {
+  height: unset !important;
+}
+.ts-chat-message-attachment-myts-file.isImage {
+  height: unset !important;
+}
+/* Selected Attachment */
+.ts-chat-room-event-selected .ts-chat-message-attachment-container .ts-chat-message-attachment-inner {
+  background: var(--teamspeak-dark-bg-modifier-selected) !important;
+  border-color: var(--teamspeak-blue) !important;
+  --room-event-highlight-border: var(--teamspeak-blue) !important;
+  --room-event-highlight-border2: var(--teamspeak-blue) !important;
+  --room-event-highlight-bg: var(--teamspeak-dark-bg-modifier-selected) !important;
+  --tsv-shaded-bg-selection: var(--teamspeak-dark-bg-modifier-selected) !important;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: var(--custom-value-scrollbar-width) !important;
+  height: 6px !important;
+}
+::-webkit-scrollbar-track {
+  background: var(--teamspeak-scrollbar-thumb) !important;
+  border-radius: 3px !important;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--teamspeak-scrollbar-track) !important;
+  border-radius: 3px !important;
+}
+.ts-chunk-scroll-track__thumb {
+    background-color: var(--teamspeak-scrollbar-track) !important;
+    border-radius: 3px !important;
+}
+
+/* Slider - Remove gradient, use solid colors */
+.ts-slider-segment-value.ts-slider-segment-value-on {
+  background: var(--custom-color-slider1) !important; /* blue */
+}
+.ts-slider-segment-value.ts-slider-segment-value-off {
+  background: var(--custom-color-slider2) !important; /* Muted Grey */
+}
+
+/* Server Tree / Sidebar - Flat Look */
+.tsv-sidebar .tsv-body-background {
+  background: var(--teamspeak-dark-bg-tertiary) !important; /* Solid color */
+}
+/* Channel Background - Simpler */
+.ts-server-tree-item-background-no-image {
+  background: transparent !important; /* Let the tree background show */
+}
+
+/* Server Tree Footer Line */
+.tsv-footer::before {
+  border-top: 2px solid var(--teamspeak-border-color) !important;
+}
+
+/* Remove Hero Button Animation */
+.tsv-button-hero {
+  animation: none !important;
+  box-shadow: none !important;
+}
+
+/* Drag and Drop Indicator */
+.ts-dnd-drag-into:after {
+  background-color: var(--teamspeak-blue-transparent) !important;
+  border: 1px dashed var(--teamspeak-blue) !important;
+}
+
+/* Multiselect Checkboxes (Approximation) */
+.ts-chat-room-event-compact.ts-chat-room-event-selected .ts-chat-message-compact-container .actual:before,
+.ts-chat-room-event-selected:before
+{
+  box-shadow: none !important;
+  background: var(--teamspeak-blue) !important;
+  border: 1px solid var(--teamspeak-text-primary);
+  border-radius: 3px;
+  /* Adjust size/position if needed via TeamSpeak Dev Tools */
+}
+
+
+/* Strong Text */
+strong {
+  font-weight: 600 !important;
+  color: var(--teamspeak-header-secondary) !important; /* Slightly less bright than pure white */
+}
+
+/* Spoilers */
+.ts-parsed-text-content .spoiler:not([visible]) {
+  background-color: var(--teamspeak-dark-bg-tertiary) !important;
+  color: transparent !important;
+  border-radius: 3px;
+}
+.ts-parsed-text-content .spoiler:not([visible]):hover {
+  background-color: rgba(32, 34, 37, 0.8) !important;
+}
+
+/* Keep original fixes if still needed */
+.tsv-activity-group-list > li li:not(:first-child) {
+  padding-left: calc(var(--tsv-padding-h) + 10px) !important;
+}
+
+/* SERVER EVENTS */
+.ts-server-events-list li.ts-event-cyan,
+.ts-server-logs-list li.ts-event-cyan {
+  border-left-color: var(--default-tsv-tint) !important; /* Uses blue now */
+}
+
+/* Channel Background Original - commented out, using transparent now */
+/* .ts-server-tree-item-background-no-image {
+  background: linear-gradient(to right, #17191c 50%, #1e1e1e 100%) !important;
+} */
+
+/* --- Ad Removal --- */
+.ts-join-community .tsv-button-filled, /* Hide "Join Community" button */
+.ts-start-community-banner,          /* Hide "Start Community" banner */
+.ts-start-community-banner + .ts-horizontal-separator { /* Hide separator after banner */
+  display: none !important;
+}
+
+.tsv-sidebar .tsv-footer:not(.transparent) {
+background: var(--teamspeak-dark-bg-tertiary) !important;
+border-top: 2px solid var(--teamspeak-dark-bg-primary) !important;
+}
+
+.tsv-settings-categories.not-in-sidebar .tsv-activity-group-list {
+  background: var(--teamspeak-dark-bg-primary) !important;
+}
+
+.ts-server-tree-item-leaf.client.self {
+    color: var(--teamspeak-blue);
+    font-weight: 500;
+}
+
+.ts-server-tree-item-groups span {
+    background: var(--teamspeak-dark-bg-secondary) !important;
+}
+
+.ts-server-tree-inactive-status{
+    background: var(--teamspeak-dark-bg-secondary) !important;
+}
+
+.ts-server-tree-active-status{
+    background: var(--teamspeak-dark-bg-secondary) !important;
+}
+
+.ts-title-logo {
+    --tsv-icon-tint: var(--teamspeak-blue) !important;
+}
+
+.ts-toggle.checked {
+    border: 1px solid var(--teamspeak-blue) !important;
+}
+
+.ts-toggle-inner.checked:after {
+    background: var(--teamspeak-blue) !important;
+}
+
+.tsv-button-filled, .tsv-button-gray {
+    border-radius: var(--tsv-border-radius) !important;
+}
+
+.tsv-tool-button.filled {
+    border-radius: var(--tsv-border-radius) !important;
+}
+
+.ts-server-informative-buttons::before {
+    border-radius: var(--tsv-border-radius) !important;
+}
+
+.ts-checkbox .ts-checkbox-inner .ts-checkbox-checkmark {
+   --tsv-icon-base: var(--teamspeak-blue) !important;
+}
+
+.tsv-readability ts-widget-container {
+    background: var(--teamspeak-dark-bg-secondary) !important;
+}
+
+
+.tsv-readability.ts-widget-container {
+
+  /* Target the specific descendant elements within the parent */
+  .ts-card.ts-widget.ts-widget-break.full.no-padding.tsv-client-banner,
+  .ts-card.ts-widget.ts-widget-break.full.tsv-client-info-groups-container.ts-client-info-status,
+  .ts-card.ts-widget.ts-widget-break.full.tsv-client-info-contact-management,
+  .ts-card.ts-widget.ts-widget-break.full.tsv-client-info-groups-container,
+  .ts-card.ts-widget.ts-transfer-quota-outer.ts-widget-break {
+    background: var(--teamspeak-dark-bg-primary) !important;
+  }
+
+}
+
+.tsv-view.tsv-activity .tsv-activity-detail.tsv-activity-secondary .ts-chat-room-event-detailed.is-system .ts-chat-message-system-body {
+    background-color: var(--teamspeak-dark-bg-primary) !important;
+    border-radius: var(--tsv-border-radius) !important;
+}
+
+.ts-activity-slideover-container .ts-chat-room-event-detailed.is-system .ts-chat-message-system-body {
+    background: var(--teamspeak-dark-bg-secondary) !important;
+}
+
+.tsv-view.tsv-activity .ts-chat-room-event-detailed.is-system .ts-chat-message-system-body {
+    background: var(--teamspeak-dark-bg-secondary) !important;
+}
+
+.tsv-action {
+  cursor: pointer !important;
+}
+
+.ts-sidebar-tab-sub-panel-accessory {
+  cursor: pointer !important;
+}
+
+.ts-user-style-current .ts-user-style-name {
+    color: var(--tsv-tint);
+}
+
+.ts-rendered-message .ts-reply .ts-reply-icon {
+    color: var(--teamspeak-text-primary) !important;
+}
+
+.tsv-tool-buttons {
+  border-radius: var(--tsv-border-radius) !important;
+}
+
+.ts-chat-room-event-detailed .ts-chat-room-event-bubble-container {
+    margin-left: 45px;
+}
+
+.ts-chat-room-event-timestamp-container {
+  display: none !important;
+}
+
+.ts-chat-message-attachment {
+    margin-left: 45px;
+}
+
+.setup-stream__settings.wide-mode .tsv-segmented-button.active {
+    background-color: transparent !important;
+    box-shadow: none;
+    font-weight: bold;
+    transform: scale(1.15);
+    transform-origin: 50% 50%;
+}
+
+.setup-stream__settings.wide-mode .tsv-segmented-button:hover {
+    transform: scale(1.15);
+    transform-origin: 50% 50%;
+    transition: all .1s ease-out;
+}
+
+.tsv-button.tsv-button-large {
+    border-radius: var(--tsv-border-radius) !important;
+}
+
+.tsv-button.tsv-button-large:hover {
+    color: var(--teamspeak-text-secondary) !important;
+}
+
+.tsv-button-filled:hover, .tsv-button-hero:hover {
+    color: var(--teamspeak-text-secondary) !important;
+    background:  !important;
+}
+
+.tsv-button-plain:hover {
+    transform: scale(1.15) !important;
+    transform-origin: 50% 50% !important;
+    transition: all .1s ease-out !important;
+}
+
+.ts-account-badges-area {
+   cursor: pointer !important;
+}
+
+.ts-server-status-constructive-buttons .tsv-tool-button:not(:last-child) {
+    margin-right: 10px !important;
+}
+
+.tsv-sidebar .tsv-search-bar, .tsv-segmented-control:not(.tsv-segmented-control-list), .ts-chat-quick-actions::before {
+    border-radius: var(--tsv-border-radius) !important;
+}
+
+.tsv-number-picker .tsv-number-picker-field input {
+    border-radius: var(--tsv-border-radius) !important;
+}
+
+/* Fügt Innenabstand rechts zum Haupt-Chat-Körper hinzu,
+   um den Input-Container von der Scrollleiste wegzuschieben */
+.tsv-view.tsv-activity-detail.tsv-activity-secondary .tsv-body.tsv-flex.tsv-body-background {
+    padding-right: 8px !important; /* Passe 8px nach Bedarf an */
+    margin-right: 10px !important;
+    box-sizing: border-box !important; /* WICHTIG: Verhindert, dass Padding die Breite erhöht */
+}
+
+.tsv-virtual-list-item {
+  margin-left: 10px !important;
+}
+
+.tsv-virtual-list-item:hover {
+  background-color: var(--teamspeak-dark-bg-secondary) !important;
+}
+
+.tsv-virtual-list-item:has(.ts-chat-message-system-body):hover {
+   background-color: transparent !important; /* Oder die ursprüngliche Hintergrundfarbe */
+}
+
+.tsv-view.tsv-activity .tsv-view.tsv-activity-detail 
+  .tsv-body.tsv-flex-column.tsv-virtual-list-container 
+  .tsv-virtual-list-item:hover {
+  background-color: var(--teamspeak-dark-bg-primary) !important;
+}
+
+.tsv-settings-categories.not-in-sidebar .tsv-item.tsv-selected>.tsv-item-highlight {
+    background-color: var(--teamspeak-dark-bg-secondary) !important;
+}
+
+.ts-discovery-card:hover {
+    --card-background: var(--teamspeak-dark-bg-primary) !important;
+}
+
