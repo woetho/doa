@@ -10,11 +10,11 @@
 The theme provides a darker TeamSpeak client.
 In addition to the changed colours, every clickable element now also has a mouse pointer. In addition, more elements have a hover effect. The chat has also been customised and now has a new look!
 ## Base variant:
-![image](https://github.com/user-attachments/assets/35f5ad09-1300-423c-a2ed-c0fdfeecff7c)
+![TS_Base](https://github.com/user-attachments/assets/6163f27d-3b2e-460c-b2b6-53a48c0f92ff)
 ## Dark variant:
-![image](https://github.com/user-attachments/assets/454d03c6-c8d8-40b0-b73f-121aeb043426)
+![TS_Dark](https://github.com/user-attachments/assets/31ce86b4-dedc-4347-9439-9213fd4fd847)
 ## Darker variant:
-![image](https://github.com/user-attachments/assets/b1bc3241-a144-490a-b152-a0d0ae9f7211)
+![TS_Darker](https://github.com/user-attachments/assets/ddaef44a-7de9-49fc-89ed-4aecb849c094)
 ## Colors featured in this theme:
 <p>
   <img src="https://github.com/user-attachments/assets/65cf7f40-de42-49ec-8678-f504e6d8e28c" width="300">
