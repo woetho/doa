@@ -1,3 +1,8 @@
+[![Latest Version Base](https://img.shields.io/badge/Latest%20Version-Darker-blue.svg)](https://github.com/ImScheinox/doa/releases/tag/Base)
+[![Latest Version Dark](https://img.shields.io/badge/Latest%20Version-Darker-blue.svg)](https://github.com/ImScheinox/doa/releases/tag/Dark)
+[![Latest Version Darker](https://img.shields.io/badge/Latest%20Version-Darker-blue.svg)](https://github.com/ImScheinox/doa/releases/tag/Darker)
+
+
 # DOA-TeamSpeak-Theme
 The theme provides a darker TeamSpeak client.
 In addition to the changed colours, every clickable element now also has a mouse pointer. In addition, more elements have a hover effect. The chat has also been customised and now has a new look!
