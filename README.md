@@ -1,8 +1,6 @@
 [![Latest Version Darker](https://img.shields.io/badge/Latest%20Base%20Version-v1.0.0-brightgreen?style=flat&link=https%3A%2F%2Fgithub.com%2FImScheinox%2Fdoa%2Freleases%2Ftag%2Fbase-v1.0.0)](https://github.com/ImScheinox/doa/releases/tag/Base-v1.0.0)
-<img alt="Static Badge" src="https://img.shields.io/badge/Latest%20Dark%20Version-v1.0.0-brightgreen?style=flat&link=https%3A%2F%2Fgithub.com%2FImScheinox%2Fdoa%2Freleases%2Ftag%2Fdark-v1.0.0">
-
-[![Latest Version Dark](https://img.shields.io/badge/Latest%20Version-Darker-blue.svg)](https://github.com/ImScheinox/doa/releases/tag/Dark-v1.0.0)
-[![Latest Version Darker](https://img.shields.io/badge/Latest%20Version-Darker-blue.svg)](https://github.com/ImScheinox/doa/releases/tag/Darker-v1.0.0)
+[![Latest Version Dark](https://img.shields.io/badge/Latest%20Dark%20Version-v1.0.0-brightgreen?style=flat&link=https%3A%2F%2Fgithub.com%2FImScheinox%2Fdoa%2Freleases%2Ftag%2Fdark-v1.0.0)](https://github.com/ImScheinox/doa/releases/tag/Dark-v1.0.0)
+[![Latest Version Darker](https://img.shields.io/badge/Latest%20Darker%20Version-v1.0.0-brightgreen?style=flat&link=https%3A%2F%2Fgithub.com%2FImScheinox%2Fdoa%2Freleases%2Ftag%2Fdarker-v1.0.0)](https://github.com/ImScheinox/doa/releases/tag/Darker-v1.0.0)
 
 
 # DOA-TeamSpeak-Theme
