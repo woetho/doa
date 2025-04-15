@@ -14,6 +14,12 @@
 ::before {
   /* --- Base Color Palette  --- */
 
+  /* --- Channel Banner Padding  --- */
+  --tsv-padding-v-large: 1px !important;
+  --tsv-padding-v: 1px !important;
+  --tsv-padding-v-small: 1px !important;
+  --tsv-padding-v-minimal: 1px !important;
+   
   /* Accent Color */
   --teamspeak-blue: #5865f2; 
   --teamspeak-blue-hover: #4752c4; 
