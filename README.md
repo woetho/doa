@@ -11,12 +11,14 @@ In addition to the changed colours, every clickable element now also has a mouse
 <p>
   <img src="https://github.com/user-attachments/assets/65cf7f40-de42-49ec-8678-f504e6d8e28c" width="300">
   <img src="https://github.com/user-attachments/assets/ab94e220-b586-441d-af1e-c0caea2e52ad" width="300">
+</p>
+<p>
   <img src="https://github.com/user-attachments/assets/4d4797db-8e1f-409c-8b54-4eb0b0211eea" width="300">
+  <img src="https://github.com/user-attachments/assets/e0bf27f0-d9af-4643-b85b-9bf553545fa0" width="300">
 </p>
 <p>
   <img src="https://github.com/user-attachments/assets/011fed91-6775-478c-8d0c-74defc9c5120" width="300">
   <img src="https://github.com/user-attachments/assets/39a0793e-0cfa-4c7c-b649-08f67e90709a" width="300">
-  <img src="https://github.com/user-attachments/assets/e0bf27f0-d9af-4643-b85b-9bf553545fa0" width="300">
 </p>
 <p>
   <img src="https://github.com/user-attachments/assets/da65411b-7b6c-4e6d-a87f-8f0001c44d45" width="300">
