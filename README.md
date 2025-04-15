@@ -52,16 +52,5 @@ The theme can be activated in <code>Settings → Apperance → User Theme</code>
 </div>
 </blockquote>
 
-<markdown-accessiblity-table data-catalyst=""><table>
-<tbody><tr>
-<td>
-<div dir="auto">ℹ️</div>
-</td>
-<td>
-For Linux it might be necessary to run <code>chomod +x ./Colorful-TeamSpeak-Installer-VARIANT-Linux</code> to make it executable.
-</td>
-</tr>
-</tbody></table></markdown-accessiblity-table>
-
 ## Credits
 Thanks to <a href="https://community.teamspeak.com/u/gamer92000" rel="nofollow"><strong>Gamer92000</strong></a> and <a href="https://community.teamspeak.com/u/LeonmarcelHD" rel="nofollow"><strong>LeonMarcelHD</strong></a>  for inspiring me to create a theme as well. And especially to whole team  <a href="https://community.teamspeak.com" rel="nofollow"><strong>@TeamSpeak</strong></a>  for implementing the official theming engine!
