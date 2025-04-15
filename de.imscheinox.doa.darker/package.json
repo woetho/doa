@@ -1,0 +1,75 @@
+{
+  "name": "DOA Darker Theme",
+  "description": "DOA TeamSpeak by ImScheinox",
+  "version": "1.0.0",
+  "identifier": "de.imscheinox.doa.darker",
+  "engines": {
+    "teamspeak": 1
+  },
+    "repository": {
+        "url": "https://github.com/bestDudeEver/themes/",
+        "directory": "purple",
+        "type": "git"
+    },
+    "image": "DOA_darker_theme.png",
+    "license": "MIT",
+    "author": {
+        "name": "ImScheinox",
+        "email": "paulthies2@gmail.net",
+        "url": "https://dawn-alliance.de",
+        "userTag": "ImScheinox@myteamspeak.com"
+    },
+  "content": {
+    "themes": [
+      {
+        "name": "Darker Red",
+        "source": "DOA_darker_red.css",
+        "image": "DOA_darker_red.png",
+	"apiVersion": 1
+      },
+      {
+        "name": "Darker Green",
+        "source": "DOA_darker_green.css",
+        "image": "DOA_darker_green.png",
+	"apiVersion": 1
+      },
+      {
+        "name": "Darker Blue",
+        "source": "DOA_darker_blue.css",
+        "image": "DOA_darker_blue.png",
+	"apiVersion": 1
+      },
+      {
+        "name": "Darker Yellow",
+        "source": "DOA_darker_yellow.css",
+        "image": "DOA_darker_yellow.png",
+	"apiVersion": 1
+      },
+      {
+        "name": "Darker Orange",
+        "source": "DOA_darker_orange.css",
+        "image": "DOA_darker_orange.png",
+	"apiVersion": 1
+      },
+      {
+        "name": "Darker Pink",
+        "source": "DOA_darker_pink.css",
+        "image": "DOA_darker_pink.png",
+	"apiVersion": 1
+      },
+      {
+        "name": "Darker Purple",
+        "source": "DOA_darker_purple.css",
+        "image": "DOA_darker_purple.png",
+	"apiVersion": 1
+      },
+      {
+        "name": "Darker Base",
+        "source": "DOA_even_darker.css",
+        "image": "DOA_darker_base.png",
+	"apiVersion": 1
+      }
+
+    ]
+  }
+}
